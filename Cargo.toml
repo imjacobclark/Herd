@@ -4,4 +4,5 @@ version = "0.1.0"
 authors = ["Jacob Clark <jacob.jh.clark@googlemail.com>"]
 
 [dependencies]
+time = "*"
 hyper = "*"
