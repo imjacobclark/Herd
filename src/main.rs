@@ -48,7 +48,8 @@ fn main() {
         threads.lock().unwrap().push((handle));
     }
 
-    for t in threads.iter(){
-        println!("Hello World");
+    for t in threads.lock().unwrap().iter() {
+        //error: cannot move out of borrowed content
+        //t.join();
     }
 }
