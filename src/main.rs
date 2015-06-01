@@ -33,29 +33,32 @@ impl Request{
 }
 
 fn main() {
-    let requests = Arc::new(Mutex::new(Vec::new()));
-    let mut threads = Vec::new();
+    let request = Arc::new(Mutex::new(Vec::new()));
+    let mut child_threads = Vec::new();
 
-    for _x in 0..10 {
-        let thread_items = requests.clone();
+    let threads = 10;
+    let requests = 10;
+
+    for _x in 0..threads {
+        let request_clone = request.clone();
 
         let handle = thread::spawn(move || {
-            for _y in 0..10 {
-                thread_items.lock().unwrap().push((Request::new(Request::create_request())));
+            for _y in 0..requests {
+                request_clone.lock().unwrap().push((Request::new(Request::create_request())));
             }
         });
 
-        threads.push(handle);
+        child_threads.push(handle);
     }
 
-    for t in threads.into_iter() {
-        let _thread = t.join();
+    for t in child_threads.into_iter() {
+        let _child_threads = t.join();
     }
 
     let mut total_duration = 0.00;
-    let total_requests = requests.lock().unwrap().len() as f64;
+    let total_requests = request.lock().unwrap().len() as f64;
 
-    for r in requests.lock().unwrap().iter() {
+    for r in request.lock().unwrap().iter() {
         total_duration = r.elapsed_time + total_duration;
     }
 
