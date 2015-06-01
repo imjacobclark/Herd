@@ -21,7 +21,7 @@ impl Request{
 
 fn main() {
     let requests = Arc::new(Mutex::new(Vec::new()));
-    let threads = Arc::new(Mutex::new(Vec::new()));
+    let mut threads = Vec::new();
 
     for _x in 0..100 {
         println!("Spawning thread: {}", _x);
@@ -45,11 +45,10 @@ fn main() {
             }
         });
 
-        threads.lock().unwrap().push((handle));
+        threads.push(handle);
     }
 
-    for t in threads.lock().unwrap().iter() {
-        //error: cannot move out of borrowed content
-        //t.join();
+    for t in threads.into_iter() {
+        t.join();
     }
 }
