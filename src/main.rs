@@ -3,9 +3,9 @@ extern crate time;
 
 use hyper::Client;
 use hyper::header::Connection;
-use time::*;
-use std::thread;
 use std::sync::{Arc, Mutex};
+use std::thread;
+use time::*;
 
 struct Request {
     elapsed_time: f64
