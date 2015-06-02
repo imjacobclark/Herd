@@ -5,7 +5,11 @@ This is very much experimental, not ready for production, or test driven whilst 
 
 Feel free to contribute via PRs.
 
-###### Compile and Run
+###### Depdendencies:
+
+`gcc clang libssl`
+
+###### Compile and Run:
 ```shell
 $ git clone git@github.com:imjacobclark/Herd.git && cd Herd
 $ cargo build
