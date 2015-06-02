@@ -7,3 +7,4 @@ authors = ["Jacob Clark <jacob.jh.clark@googlemail.com>"]
 time = "*"
 hyper = "*"
 getopts = "*"
+nix = "*"

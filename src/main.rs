@@ -1,5 +1,8 @@
+extern crate nix;
+
 use std::thread;
 use std::sync::{Arc, Mutex};
+use nix::unistd::fork;
 
 mod request;
 
@@ -7,11 +10,17 @@ fn main() {
     let request = Arc::new(Mutex::new(Vec::new()));
     let mut child_threads = Vec::new();
 
-    let threads = 10;
+    let threads = 3000;
     let requests = 1;
 
     for _x in 0..threads {
+        println!("{}", _x);
+
         let request_clone = request.clone();
+
+        /*if _x == 1500 {
+            let pid = nix::unistd::fork();    
+        } */  
 
         let handle = thread::spawn(move || {
             for _y in 0..requests {

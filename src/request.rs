@@ -48,6 +48,7 @@ impl Request{
 #[cfg(test)]
 mod test {
     use super::Request;
+    
     #[test]
     fn test_total_requests_made_returns_expected_integer() {
         let mut requests = &mut Vec::new();
