@@ -1,5 +1,5 @@
 # Herd
-An experimental HTTP load testing client written in Rust
+An `simple` but experimental HTTP load testing client written in Rust
 
 Due to the current immaturity of async in Rust via libraries such as [mio](https://github.com/carllerche/mio), the amount of concurrent HTTP requests Herd can make is totally dependent on the hardware of the system Herd is executed on. 
 
