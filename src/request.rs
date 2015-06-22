@@ -20,7 +20,7 @@ impl Request{
         let mut client = Client::new();
         let start = time::precise_time_s();
             
-        let _res = client.get("http://jacob.uk.com")
+        let _res = client.get("http://blog.miterraza.co.uk")
             .header(Connection::close()) 
             .send().unwrap();
 

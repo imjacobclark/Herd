@@ -2,12 +2,9 @@ use std::thread;
 use std::sync::{Arc, Mutex};
 use request;
 
-pub fn release() {
+pub fn release(threads: i32, requests: i32) {
 	let request = Arc::new(Mutex::new(Vec::new()));
     let mut child_threads = Vec::new();
-
-    let threads = 10;
-    let requests = 1;
 
     for _x in 0..threads {
         let request_clone = request.clone(); 
