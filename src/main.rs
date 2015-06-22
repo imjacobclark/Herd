@@ -4,7 +4,7 @@ mod request;
 extern crate nix;
 
 fn main() {
-    let mut threads = 2;
+    let mut threads = 99;
     let requests = 1;
     let host = "http://jacob.uk.com";
 
