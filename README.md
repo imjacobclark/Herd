@@ -1,9 +1,7 @@
 # Herd
 An __simple__ but __experimental__ HTTP load testing client written in Rust
 
-Due to the current immaturity of async in Rust via libraries such as [mio](https://github.com/carllerche/mio), the amount of concurrent HTTP requests Herd can make is totally dependent on the hard limit of threads set the by OS per process (2048 in OSX) and the hardware of the system Herd is executed on. 
-
-Currently looking at solutions to get around these problems, feel free to suggest solutions or propose changes via pull requests.
+Herd is hardware intensive. Per each 100 virtual users, Herd will fork itself in order to overcome hard limits set by the OS on how many active threads a process can have at any one time. Due to this, it is recomended you run Herd from a disposable machine in the cloud, high levels of virtual users can crash machines if they run out of memory or CPU resources, __do not run Herd on a production machine__.
 
 ###### Depdendencies:
 
