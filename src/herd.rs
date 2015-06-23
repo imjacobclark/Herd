@@ -12,7 +12,7 @@ pub fn release(threads: i32, requests: i32, host: &str) {
 
         let handle = thread::spawn(move || {
             for _y in 0..requests {
-                println!("Spawning virtual user {}", _y);
+                println!("Spawning virtual user {}", _x);
                 let host_str = &host_clone;
                 request_clone.lock().unwrap().push((request::Request::new(request::Request::create_request(host_str))));
             }
