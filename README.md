@@ -26,13 +26,13 @@ $ chmod +x Herd
 $ ./Herd <THREADS(int)> <REQUESTS(int)> <HOST(str)>
 ```
 
-###### Depdendencies:
+###### Dependencies:
 
 `gcc clang libssl rust cargo`
 
 ###### Compile from source and run:
 ```shell
 $ git clone git@github.com:imjacobclark/Herd.git && cd Herd
-$ cargo build
-$ ./target/debug/Herd <THREADS(int)> <REQUESTS(int)> <HOST(str)>
+$ cargo build --release
+$ ./target/release/Herd <THREADS(int)> <REQUESTS(int)> <HOST(str)>
 ```
