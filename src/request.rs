@@ -16,11 +16,11 @@ impl Request{
         }
     }
 
-    pub fn create_request() -> f64 {
+    pub fn create_request(host: &str) -> f64 {
         let mut client = Client::new();
         let start = time::precise_time_s();
             
-        let _res = client.get("http://jacob.uk.com")
+        let _res = client.get(host)
             .header(Connection::close()) 
             .send().unwrap();
 

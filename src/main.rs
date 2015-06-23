@@ -1,24 +1,33 @@
+use std::env;
+
 mod herd;
 mod request;
 
 extern crate nix;
 
 fn main() {
-    let mut threads = 5000;
-    let requests = 100;
-    let host = "http://jacob.uk.com";
+    let args: Vec<_> = env::args().collect();
 
-    let process_threshold = 1000;
-    let processes = threads / process_threshold;
+    if args.len() >= 4 {
+        let threads = args[1].parse::<i32>().unwrap();
+        let requests = args[2].parse::<i32>().unwrap();
+        let host = &args[3];
 
-    for _x in 1..processes {
-        let _pid = nix::unistd::fork();
-    }
+    
+        let process_threshold = 1000;
+        let processes = threads / process_threshold;
 
-    if threads >= process_threshold {
-    	herd::release(process_threshold, requests, host);
+        for _x in 1..processes {
+            let _pid = nix::unistd::fork();
+        }
+
+        if threads >= process_threshold {
+        	herd::release(process_threshold, requests, host);
+        }else{
+        	herd::release(threads, requests, host);
+        }
     }else{
-    	herd::release(threads, requests, host);
+        println!("Error: didn't specify enough parameters. USAGE: Herd <THREADS(int)> <REQUESTS(int)> <HOST(str)>")
     }
     
 }

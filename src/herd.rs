@@ -2,16 +2,19 @@ use std::thread;
 use std::sync::{Arc, Mutex};
 use request;
 
-pub fn release(threads: i32, requests: i32, _host: &str) {
+pub fn release(threads: i32, requests: i32, host: &str) {
     let request = Arc::new(Mutex::new(Vec::new()));
     let mut child_threads = Vec::new();
 
     for _x in 0..threads {
         let request_clone = request.clone(); 
+        let host_clone = host.to_owned();
 
         let handle = thread::spawn(move || {
             for _y in 0..requests {
-                request_clone.lock().unwrap().push((request::Request::new(request::Request::create_request())));
+                println!("Spawning virtual user {}", _y);
+                let host_str = &host_clone;
+                request_clone.lock().unwrap().push((request::Request::new(request::Request::create_request(host_str))));
             }
         });
 
