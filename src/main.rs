@@ -4,15 +4,20 @@ mod request;
 extern crate nix;
 
 fn main() {
-    let mut threads = 99;
+    let mut threads = 1;
     let requests = 1;
     let host = "http://jacob.uk.com";
 
-    while threads % 100 == 0 {
+    let processes = threads / 100;
+
+    for _x in 1..processes {
         let _pid = nix::unistd::fork();
-        herd::release(100, requests, host);
-        threads = threads - 100;
     }
 
-    herd::release(threads, requests, host);
+    if threads >= 100 {
+    	herd::release(100, requests, host);
+    }else{
+    	herd::release(threads, requests, host);
+    }
+    
 }
