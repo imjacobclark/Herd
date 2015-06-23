@@ -1,7 +1,7 @@
 # Herd
 An experimental HTTP load testing application written in Rust.
 
-Herd is an experimental HTTP load testing application written in Rust. It's main focus is being easy to use and low on OS level depencies such as the JVM.
+Herd is an experimental HTTP load testing application written in Rust. It's main focus is being easy to use and low on OS level dependencies such as the JVM.
 
 Herd is currently able to spawn thousands of concurrent requests to HTTP endpoints by making use of unix process forking and multithreadding.
 
