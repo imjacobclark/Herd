@@ -11,5 +11,5 @@ Herd is hardware intensive. Per each 100 virtual users, Herd will fork itself in
 ```shell
 $ git clone git@github.com:imjacobclark/Herd.git && cd Herd
 $ cargo build
-$ ./target/debug/Herd
+$ ./target/debug/Herd <THREADS(int)> <REQUESTS(int)> <HOST(str)>
 ```
