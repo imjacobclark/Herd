@@ -5,7 +5,7 @@ Herd is an experimental HTTP load testing application written in Rust. It's main
 
 Herd is currently able to spawn thousands of concurrent requests to HTTP endpoints by making use of unix process forking and multithreadding.
 
-Herd is hardware intensive. Per each 100 virtual users, Herd will fork itself in order to overcome hard limits set by the OS on how many active threads a process can have at any one time. Due to this, it is recomended you run Herd from a disposable machine in the cloud, high levels of virtual users can crash machines if they run out of memory or CPU resources, __do not run Herd on a production machine__.
+Herd is hardware intensive. Per each 1000 virtual users, Herd will fork itself in order to overcome hard limits set by the OS on how many active threads a process can have at any one time. Due to this, it is recomended you run Herd from a disposable machine in the cloud, high levels of virtual users can crash machines if they run out of memory or CPU resources, __do not run Herd on a production machine__.
 
 ###### Todo
 
