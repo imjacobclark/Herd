@@ -17,15 +17,20 @@ Herd is hardware intensive. Per each 100 virtual users, Herd will fork itself in
 * Export data to influxDB or other data store
 * Graph metrics
 
-###### Download
+###### Download and run
 
 Grab the latest stable **preview** release of Herd [here](https://github.com/imjacobclark/Herd/releases).
+
+```shell
+$ chmod +x Herd
+$ ./Herd <THREADS(int)> <REQUESTS(int)> <HOST(str)>
+```
 
 ###### Depdendencies:
 
 `gcc clang libssl rust cargo`
 
-###### Compile from source and Run:
+###### Compile from source and run:
 ```shell
 $ git clone git@github.com:imjacobclark/Herd.git && cd Herd
 $ cargo build
