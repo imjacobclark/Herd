@@ -1,5 +1,5 @@
 [root]
-name = "Herd"
+name = "herd"
 version = "0.0.1"
 dependencies = [
  "clap 1.0.0-beta (registry+https://github.com/rust-lang/crates.io-index)",

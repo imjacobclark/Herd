@@ -9,7 +9,7 @@ use clap::{Arg, App};
 
 fn main() {
 
-    let matches = App::new("Herd")
+    let matches = App::new("herd")
                         .version("0.0.1")
                         .about("Does http loadtesting")
                         .arg(Arg::with_name("threads")
