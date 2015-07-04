@@ -6,6 +6,6 @@ authors = ["Jacob Clark <jacob.jh.clark@googlemail.com>"]
 [dependencies]
 time = "*"
 hyper = "*"
-getopts = "*"
 nix = "*"
 threadpool = "*"
+clap = "*"
