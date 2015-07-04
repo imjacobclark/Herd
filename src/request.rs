@@ -22,7 +22,13 @@ impl Request{
             
         let _res = client.get(host)
             .header(Connection::close()) 
-            .send().unwrap();
+            .send();
+
+        if let Err(res) = _res {
+            println!("Err: {:?}", res);
+        } else {
+            _res.unwrap();
+        }
 
         let end = time::precise_time_s();
 
