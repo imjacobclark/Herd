@@ -2,7 +2,7 @@ use std::thread;
 use std::sync::{Arc, Mutex};
 use request;
 
-pub fn release(threads: i32, requests: i32, host: &str) {
+pub fn release(threads: i64, requests: i64, host: &str) {
     let request = Arc::new(Mutex::new(Vec::new()));
     let mut child_threads = Vec::new();
 
