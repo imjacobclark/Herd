@@ -16,6 +16,7 @@ Herd is hardware intensive. Per each 1000 virtual users, Herd will fork itself i
 * Ability to create tests via a YAML config file
 * Export data to influxDB or other data store
 * Graph metrics
+* Master/Slave mode to orchestrate a thundering herd via a message broker
 
 ###### Download and run
 
