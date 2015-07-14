@@ -28,10 +28,10 @@ $ chmod +x herd
 $ ./herd -t <THREADS(int)> -r <REQUESTS(int)> <HOST(str)>
 ```
 
-You can define several hosts to test with a configuration file. See [example-config.yml](example-config.yml).
+You can define several hosts to test with a configuration file. See [example-config.yaml](example-config.yaml).
 
 ```shell
-$ ./herd -c config.yml
+$ ./herd -c config.yaml
 ```
 
 ###### Dependencies:
