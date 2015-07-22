@@ -1,11 +1,12 @@
 [package]
-name = "Herd"
+name = "herd"
 version = "0.0.1"
 authors = ["Jacob Clark <jacob.jh.clark@googlemail.com>"]
 
 [dependencies]
 time = "*"
 hyper = "*"
-getopts = "*"
 nix = "*"
 threadpool = "*"
+clap = "*"
+yaml-rust = "*"

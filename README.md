@@ -10,20 +10,28 @@ Herd is hardware intensive. Per each 1000 virtual users, Herd will fork itself i
 ###### Todo
 
 * ~~Linear scenario~~
+* Ability to create tests via a YAML config file
+  * ~~multiple hosts with different threads/requests per host~~
 * Ramp up scenario
 * Batched scenario
 * Accept command line flags to begin a test
-* Ability to create tests via a YAML config file
 * Export data to influxDB or other data store
 * Graph metrics
+* Master/Slave mode to orchestrate a thundering herd via a message broker
 
 ###### Download and run
 
 Grab the latest stable **preview** release of Herd [here](https://github.com/imjacobclark/Herd/releases).
 
 ```shell
-$ chmod +x Herd
-$ ./Herd <THREADS(int)> <REQUESTS(int)> <HOST(str)>
+$ chmod +x herd
+$ ./herd -t <THREADS(int)> -r <REQUESTS(int)> <HOST(str)>
+```
+
+You can define several hosts to test with a configuration file. See [example-config.yaml](example-config.yaml).
+
+```shell
+$ ./herd -c config.yaml
 ```
 
 ###### Dependencies:
@@ -34,5 +42,5 @@ $ ./Herd <THREADS(int)> <REQUESTS(int)> <HOST(str)>
 ```shell
 $ git clone git@github.com:imjacobclark/Herd.git && cd Herd
 $ cargo build --release
-$ ./target/release/Herd <THREADS(int)> <REQUESTS(int)> <HOST(str)>
+$ ./target/release/herd -t <THREADS(int)> -r <REQUESTS(int)> <HOST(str)>
 ```

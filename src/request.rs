@@ -17,12 +17,18 @@ impl Request{
     }
 
     pub fn create_request(host: &str) -> f64 {
-        let mut client = Client::new();
+        let client = Client::new();
         let start = time::precise_time_s();
             
         let _res = client.get(host)
             .header(Connection::close()) 
-            .send().unwrap();
+            .send();
+
+        if let Err(res) = _res {
+            println!("Err: {:?}", res);
+        } else {
+            _res.unwrap();
+        }
 
         let end = time::precise_time_s();
 
