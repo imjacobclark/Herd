@@ -11,7 +11,7 @@ Herd is hardware intensive. Per each 1000 virtual users, Herd will fork itself i
 
 As Herd is unlikley to compile out the box, it is recomended you clone this repository and fully build from source, some alterations to the source code may be needed over time as the Rust language changes, I do not intend on continuously maintaining this project.
 
-####### Dependencies:
+###### Dependencies:
 
 `gcc clang libssl rust cargo`
 
