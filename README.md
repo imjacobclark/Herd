@@ -19,12 +19,11 @@ As Herd is unlikley to compile out the box, it is recomended you clone this repo
 ```shell
 $ git clone git@github.com:imjacobclark/Herd.git && cd Herd
 $ cargo build --release
-$ ./target/release/herd -t <THREADS(int)> -r <REQUESTS(int)> <HOST(str)>
 ```
 
 You can define several hosts to test with a configuration file. See [example-config.yaml](example-config.yaml).
 
 ```shell
-$ ./target/release/herd -c config.yaml
+$ .cargo run -- --config example-config.yaml
 ```
 

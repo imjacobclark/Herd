@@ -1,8 +1,8 @@
 Hosts:
-    - Host: http://www.example.com/
+    - Host: http://www.example.com
       Threads: 2
       Requests: 10
 
-    - Host: http://foobar.example.com/
+    - Host: http://www.example.com
       Threads: 5
       Requests: 10
